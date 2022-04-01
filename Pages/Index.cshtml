@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+	ViewData["Title"] = "Home page";
+}
+@Html.AntiForgeryToken()
+<div class="text-center">
+	<h1 class="display-6">Unnamed L4D2 Scrim Site</h1>
+	<div id="currentPairsDiv" class="pairs">
+		<partial name="_Pairs" for="@Model.currentPairs" />
+	</div>
+	<div id="groupsDiv">
+		<partial name="_Groups" for="@Model.AllGroups" />
+	</div>
+	<div id="newDiv">
+		<div>
+			Name: <input id="myName">
+		</div>
+	</div>
+	<div id="playerListDiv">
+		<partial name="_PlayerList" for="@Model.allUsers" />
+	</div>
+	<div id="messageListDiv">
+		<partial name="Messages" for="@Model.messageList" />
+	</div>
+</div>

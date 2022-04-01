@@ -1,0 +1,28 @@
+﻿@model MessageList
+@foreach(MessageInfo m in @Model.messages)
+{
+	if(m.MessageFor == "QQQQ" || m.MessageFor != "") {
+		//if(m.MessageFor == "QQQQ" || m.MessageFor == "") { 
+<div class="message new">
+	@m.Message
+	<div class="response">
+		@if (m.messageType == "yn")
+		{
+			<span class="action yes">Yes</span>
+			<span class="action no">No</span>
+		}
+		@if (m.messageType == "rate")
+		{
+			<div><input type="radio" class="action" value="1"><span>1</span></div>
+			<div><input type="radio" class="action" value="2"><span>2</span></div>
+			<div><input type="radio" class="action" value="3"><span>3</span></div>
+			<div><input type="radio" class="action" value="4"><span>4</span></div>
+		}
+		@if (m.messageType == "user")
+		{
+			<input type="text" id="lname" name="lname">
+		}
+	</div>
+</div>
+	}
+}

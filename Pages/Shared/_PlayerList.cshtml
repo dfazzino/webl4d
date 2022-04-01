@@ -1,0 +1,11 @@
+﻿@model AllUsers
+@foreach (MyUser myUser in Model.Users)
+{
+	<div class="myuser" id="user_@myUser.Id">
+		<span class="@myUser.Status statusdot"></span><span>@myUser.Name</span>
+		<div class="actionsDiv">
+			<span class="invite action">Invite</span>
+			<span class="block action">Block</span>
+		</div>
+	</div>
+}

@@ -1,0 +1,27 @@
+﻿@foreach (Group g in Model.Groups)
+{
+	if (g.InQueue != true)
+	{
+		var tempID = "group_" + @g.ID;
+		<div id="@tempID" style="margin-top: 30px;" class="group @(g.GroupUsers.Count >= 4 ? "fullgroup":"")">
+			@foreach (MyUser u in g.GroupUsers)
+			{
+				<div>@u.Name</div>
+			}
+			@if (@g.GroupUsers.Count != 4 && (@g.Invitations.Where(i => i.InviteTo == "QQQQ").FirstOrDefault() != null || g.Public == true))
+			{
+				<div class="joinDiv">
+					<div class="join action">Join</div>
+				</div>
+			}
+			<div class="readyDiv">
+				<div class="ready action">Ready</div>
+
+			</div>
+			<div class="leaveDiv">
+				<div class="leave action">Leave</div>
+
+			</div>
+		</div>
+	}
+}

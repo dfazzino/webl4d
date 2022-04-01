@@ -1,0 +1,193 @@
+﻿body {
+	background-color: beige;
+}
+
+.pairs {
+	display: flex;
+	padding: 3px;
+	background-color: beige;
+	flex-wrap: wrap;
+}
+
+.match {
+	display: flex;
+	margin: 20px;
+	border: 1px solid black;
+	width: 45%;
+	background-color: azure;
+	justify-content: space-evenly;
+}
+
+.pair {
+	display: flex;
+	padding: 3px;
+	background-color: white;
+	border: 1px solid black;
+	margin: 10px;
+}
+
+	.pair .group {
+		background-color: darkcyan;
+	}
+
+#groupsDiv {
+	display: flex;
+}
+
+
+.group {
+	border: 1px solid black;
+	margin-left: 4px;
+	width: 150px;
+	background-color: palegreen;
+	padding: 5px;
+}
+
+	/*		.group.fullgroup .joinDiv {
+			display: none;
+		}*/
+	.group .readyDiv {
+		display: none;
+	}
+
+	.group.fullgroup .readyDiv {
+		display: block;
+	}
+
+	.group .leaveDiv {
+		display: none;
+	}
+
+.nextlist {
+	border: 1px solid black;
+	margin: 10px;
+	background-color: white;
+}
+
+.nextgroup {
+	border: 1px solid black;
+	padding: 2px;
+	margin: 10px;
+}
+
+.nextuser {
+	padding: 3px;
+	border-right: 1px solid black;
+	display: inline-block;
+	min-width: 55px;
+}
+
+	.nextuser:last-child {
+		border-right: 0px solid black;
+	}
+
+.nextnum {
+	background-color: lightgray;
+	border: 1px black solid;
+}
+
+.fullgroup {
+	background-color: cornflowerblue;
+	border: 1px solid black;
+}
+
+.myuser:hover {
+	font-weight: bold;
+}
+
+.statusdot {
+	border: 2px solid black;
+	border-radius: 15px;
+	max-width: 100px;
+	padding: 5px;
+	display: inline-block;
+	vertical-align: unset;
+	margin-right: 3px;
+}
+
+.actionsDiv {
+	display: none;
+	margin: 3px;
+	position: relative;
+	top: -20px;
+	right: 100px;
+	text-align: center;
+}
+
+.action {
+	/*display: inline-block;*/
+	border: 2px solid black;
+	border-radius: 15px;
+	padding: 3px;
+	cursor: pointer;
+	width: 70px;
+	background-color: white;
+	margin: 1px;
+}
+
+.group .action {
+	display: inline-block;
+}
+
+.action:hover {
+	background-color: green;
+}
+
+.myuser:hover .actionsDiv {
+	display: block;
+	position: relative;
+}
+
+.ingame {
+	background-color: darkcyan;
+}
+
+.ingroup {
+	background-color: cornflowerblue;
+}
+
+.lfg {
+	background-color: palegreen;
+}
+
+.away {
+	background-color: tomato;
+}
+#messageListDiv {
+	display: flex;
+	position: sticky;
+	bottom: -45px;
+	/*background-color: white;*/
+	/*border-top: 1px solid gray;*/
+	padding-top: 6px;
+	/* padding-left: 9px; */
+	height: 150px;
+	padding-bottom: 19px;
+
+}
+.message {
+	background-color: palegreen;
+	border: 1px solid black;
+	border-radius: 7px;
+	padding: 4px;
+	width: 300px;
+	transition: margin-top linear 1s;
+	margin-top: 0px;
+}
+.message .response{
+	display: flex;
+	flex-direction: column;
+}
+.message.new{
+	margin-top: 180px;
+}
+
+@@media (max-width: 1500px) {
+	.match {
+		width: 80%;
+	}
+
+	.pairs {
+		justify-content: center;
+	}
+}
